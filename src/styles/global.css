@@ -1,0 +1,73 @@
+/* ─── DESIGN TOKENS — RepForge Palette ─────────────────────────────────── */
+:root {
+  --bg-primary: #080808;
+  --bg-secondary: #0f0f0f;
+  --bg-card: #141414;
+  --bg-card2: #1a1a1a;
+  --accent: #ff6a00;           /* Naranja fuego principal */
+  --accent-bright: #ff9500;    /* Naranja brillante / hover */
+  --accent2: #e63000;          /* Rojo-naranja oscuro */
+  --accent3: #c0c8d0;          /* Plateado (hierro) */
+  --accent-gold: #ffb700;      /* Amarillo llama */
+  --text-primary: #f0f0f0;
+  --text-muted: #5a5a5a;
+  --text-dim: #888;
+  --border: #222222;
+  --border-bright: #2e2e2e;
+  --red: #ff3b30;
+  --green: #30d158;
+}
+
+/* ─── RESET & BASE ──────────────────────────────────────────────────────── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Barlow', sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── SCROLLBAR ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--accent2); border-radius: 2px; }
+
+/* ─── MUSCLE TAGS ───────────────────────────────────────────────────────── */
+.muscle-tag {
+  display: inline-block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-right: 4px;
+}
+.muscle-pecho   { background: rgba(255,106,0,0.18);  color: #ff8c40; border: 1px solid rgba(255,106,0,0.3); }
+.muscle-espalda { background: rgba(192,200,208,0.1); color: #c0c8d0; border: 1px solid rgba(192,200,208,0.2); }
+.muscle-piernas { background: rgba(255,183,0,0.12);  color: #ffb700; border: 1px solid rgba(255,183,0,0.25); }
+.muscle-hombros { background: rgba(230,48,0,0.15);   color: #ff6040; border: 1px solid rgba(230,48,0,0.25); }
+.muscle-brazos  { background: rgba(255,149,0,0.12);  color: #ff9500; border: 1px solid rgba(255,149,0,0.25); }
+
+/* ─── ANIMATIONS ────────────────────────────────────────────────────────── */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateX(20px); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes flamePulse {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(255,106,0,0.5)); }
+  50%       { filter: drop-shadow(0 0 14px rgba(255,183,0,0.7)); }
+}
+
+.page-enter {
+  animation: fadeIn 0.25s ease forwards;
+}
